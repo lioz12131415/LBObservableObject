@@ -183,3 +183,152 @@ objc0.$text.post(toGroup: "B") /* OR objc0.$text.post(toGroups: ["B", ...])  */
         /* Call when property value change */
     }
 ```
+
+<br>
+
+# LBObservableArray #
+## Example ##
+
+```swift  
+class Objc: LBObservableObject {
+    
+    @LBObservableProperty var id:   String = "SOME Id"
+    @LBObservableProperty var text: String = "SOME Text"
+    
+    init(id: String, text: String, group: String) {
+        super.init()
+        self.id   = id
+        self.text = text
+        self.attach(id: id, toGroup: group)
+    }
+    
+    internal required init() {
+        super.init()
+    }
+}
+```
+
+```swift  
+    
+    var array0 = LBObservableArray<Objc>()
+    var array1 = LBObservableArray<Objc>()
+    
+    add(to: array0, group: "A")
+    add(to: array1, group: "B")
+    
+    array0.observe(self).onPosted { [weak self] in
+        /* on Array Posted */
+    }
+    .attach(toGroup: "A")
+    
+    array1.observe(self).onPosted { [weak self] in
+        /* on Array Posted */
+    }
+    .attach(toGroup: "B")
+    
+    array0.removeFirst()
+    array0.observe(self).post(toGroup: "B") /* OR array0.observe(self).post(toGroups: ["B", ...])  */
+    
+    internal func add(to array: LBObservableArray<Objc>, group: String) {
+        for i in 0..<100 {
+            array.append(Objc(id: "objc-id-\(i)", text: "text-\(i)", group: group))
+        }
+    }
+```
+
+## Variables ##
+
+```swift  
+    /*
+    * */
+    public var count: Int
+    /*
+    * */
+    public var last: Element?
+    /*
+    * */
+    public var first: Element?
+    
+```
+
+## Methods ##
+
+### Static ###
+```swift  
+    /*
+    * */
+    public static func ==(lhs: LBObservableArray, rhs: LBObservableArray) -> Bool
+    /*
+    * */
+    public static func +=(lhs: inout LBObservableArray, rhs: LBObservableArray)
+    /*
+    * */
+    public static func +(lhs: inout LBObservableArray, rhs: LBObservableArray)
+    /*
+    * */
+    public static func +=(lhs: inout LBObservableArray, rhs: [Element])
+    /*
+    * */
+    public static func +(lhs: inout LBObservableArray, rhs: [Element])
+    
+```
+
+### Discardable Result ###
+```swift  
+    /*
+    * */
+    @discardableResult public func popLast() -> Element?
+    /*
+    * */
+    @discardableResult public func removeLast() -> Element
+    /*
+    * */
+    @discardableResult public func removeFirst() -> Element
+    /*
+    * */
+    @discardableResult public func remove(at index: Int) -> Element
+    /*
+    * */
+```
+
+### Others ###
+```swift  
+    /*
+    * */
+    public func append(_ newElement: Element)
+    /*
+    * */
+    public func insert(_ newElement: Element, at i: Int)
+    /*
+    * */
+    public func append(contentsOf newElements: [Element])
+    /*
+    * */
+    public func removeAll(keepingCapacity keepCapacity: Bool = false)
+    
+    /*
+    * */
+    public func forEach(_ body: (Element) -> Void)
+    /*
+    * */
+    public func map<T>(_ transform: (Element) -> T) -> [T]
+    /*
+    * */
+    public func filter(_ isIncluded: (Element) -> Bool) -> [Element]
+    /*
+    * */
+    public func first(where predicate: (Element) -> Bool) -> Element?
+    /*
+    * */
+    public func firstIndex(where predicate: (Element) -> Bool) -> Int?
+    /*
+    * */
+    public func firstIndex(of element: Element) -> Int? where Element: Equatable
+    /*
+    * */
+    public func compactMap<Result>(_ transform: (Element) -> Result?) -> [Result]
+```
+
+<br>
+
+
