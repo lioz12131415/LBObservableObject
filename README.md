@@ -368,9 +368,9 @@ button.bind.isEnabled(button_objc.$isEnabled)
 button.bind.backgroundColor(button_objc.$backgroundColor)
 button.bind.setTitleColor(button_objc.$textColor, for: .normal)
 
-object.isEnabled = ${newValue} // will change the button instance isEnabled 
-object.textColor = ${newValue} // will change the button instance textColor 
-object.backgroundColor = ${newValue} // will change the button instance backgroundColor 
+object.isEnabled = ${newValue} // change the button instance isEnabled 
+object.textColor = ${newValue} // change the button instance textColor 
+object.backgroundColor = ${newValue} // change the button instance backgroundColor 
 
 ```
 
