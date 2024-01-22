@@ -640,14 +640,15 @@ objc.observe(${Target: NSObject})
 +---------------+
     |
     v
-    +-------------+          
-    |   Observer  | ----+-> +-----------------+ 
-    +-------------+         |   Targets Pool  |                 
-                            +-----------------+
-                                              |  
-                                              |
-                                              +-----+-> GET || CREATE 
-                                                        Observer OBJECT FOR Target TO Observe Objc Posted Changes
+    +--------------------+
+    | LBObservableObject |          
+    |      Observer      | ----+-> +-----------------+ 
+    +--------------------+         |   Targets Pool  |                 
+                                   +-----------------+
+                                             |  
+                                             |
+                                             +-----+-> GET || CREATE 
+                                                       Observer OBJECT FOR Target TO Observe Objc Posted Changes
                                                          |
                   +--------------------------------------+
                   |
