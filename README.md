@@ -640,10 +640,11 @@ objc.observe(${Target: NSObject})
 +---------------+
     |
     v
-    +-------------+          +-----------------+
-    |   Observer  | -----+-> |   Targets Pool  | 
-    +-------------+          +-----------------+               
-                                              |
+    +-------------+          
+    |   Observer  | ----+-> +-----------------+ 
+    +-------------+         |   Targets Pool  |                 
+                            +-----------------+
+                                              |  
                                               |
                                               +-----+-> GET || CREATE 
                                                         Observer OBJECT FOR Target TO Observe Object Posted Changes
