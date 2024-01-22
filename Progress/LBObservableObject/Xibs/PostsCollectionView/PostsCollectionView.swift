@@ -22,8 +22,6 @@ class PostsCollectionView: IBDesignableXibView {
         collectionView.dataSource = self
     }
     
-    
-    
     internal func reload(_ posts: [Post], group: String) {
         self.group  = group
         self.posts += posts
@@ -50,14 +48,14 @@ extension PostsCollectionView: UICollectionViewDelegate {
     // ==================================================== //
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let array = [
-            UIColor.gray,
-            UIColor.blue,
-            UIColor.green,
-            UIColor.yellow,
+            "text-test-0",
+            "text-test-1",
+            "text-test-2",
         ]
+        posts[indexPath.item]?.text = array.randomElement() ?? ""
         
-        self.posts[indexPath.item]?.textColor = array.randomElement() ?? UIColor.white
-        self.posts[indexPath.item]?.$textColor.post(toGroups: ["A", "B", "C", "D"])
+        Network.requsts.posts.put(posts[indexPath.item])
+        posts[indexPath.item]?.$text.post(toGroups: ["A", "B", "C", "D"])
     }
 }
 
