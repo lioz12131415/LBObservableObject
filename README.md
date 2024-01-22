@@ -1,9 +1,9 @@
 # LBObservableObject
 This library provides a custom Observable Objects LBObservableObject
 
+<br>
 
 # LBObservableObject #
-
 ## Example ##
 
 ```swift 
@@ -331,4 +331,225 @@ class Objc: LBObservableObject {
 
 <br>
 
+# LBObservablePropertyBind #
+
+## Example ##
+
+```swift  
+class Objc: LBObservableObject {
+    
+    @LBObservableProperty var isEnabled:       Bool    = false
+    @LBObservableProperty var textColor:       UIColor = .darkGray
+    @LBObservableProperty var backgroundColor: UIColor = .lightGray
+    
+    init(isEnabled: Bool, textColor: UIColor, backgroundColor: UIColor) {
+        self.isEnabled = isEnabled
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+    }
+    
+    required init() {
+        super.init()
+    }
+}
+
+var object = Objc()
+var button = UIButton()
+
+/* button.bind return 'LBObservablePropertyButtonBinder' object */
+
+button.bind.isEnabled(button_objc.$isEnabled)
+button.bind.backgroundColor(button_objc.$backgroundColor)
+button.bind.setTitleColor(button_objc.$textColor, for: .normal)
+
+object.isEnabled = ${newValue} // will change the button instance isEnabled 
+object.textColor = ${newValue} // will change the button instance textColor 
+object.backgroundColor = ${newValue} // will change the button instance backgroundColor 
+
+```
+
+## UIView -> LBObservablePropertyViewBinder ##
+
+### Variables ###
+```swift  
+
+    /* All Variables of Type LBObservablePropertyBind  */
+    /*
+     * LBObservablePropertyBind methods -> 
+     * /* public func remove() */
+     * /* public func onChange(_ block: @escaping() -> Void) */
+     * /* public func onChange(_ block: @escaping(_ newValue: Value) -> Void) */
+     * */
+     
+    public private(set) var alpha
+    public private(set) var isOpaque
+    public private(set) var isHidden
+    public private(set) var tintColor
+    public private(set) var clipsToBounds
+    public private(set) var backgroundColor
+    public private(set) var tintAdjustmentMode
+    public private(set) var isUserInteractionEnabled
+    
+```
+
+### Methods ###
+```swift  
+
+    /*
+     * */
+    @discardableResult public func alpha<T: LBAnyCGFloat>(_ property: LBObservableProperty<T>) -> LBPropertyBindCGFloat
+    /*
+     * */
+    @discardableResult public func isOpaque<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool 
+    /*
+     * */
+    @discardableResult public func isHidden<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @discardableResult public func tintColor<T: LBAnyColor>(_ property: LBObservableProperty<T>) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func clipsToBounds<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @discardableResult public func backgroundColor<T: LBAnyColor>(_ property: LBObservableProperty<T>) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func tintAdjustmentMode<T: LBAnyTintAdjustmentMode>(_ property: LBObservableProperty<T>) -> LBPropertyBindTintAdjustmentMode
+    /*
+     * */
+    @discardableResult public func isUserInteractionEnabled<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+
+    /*
+     * */
+```
+
+## UIButton -> LBObservablePropertyButtonBinder -> LBObservablePropertyViewBinder ##
+
+### Variables ###
+```swift  
+
+    /* All Variables of Type LBObservablePropertyBind  */
+    /*
+     * LBObservablePropertyBind methods -> 
+     * /* public func remove() */
+     * /* public func onChange(_ block: @escaping() -> Void) */
+     * /* public func onChange(_ block: @escaping(_ newValue: Value) -> Void) */
+     * */
+    
+    public private(set) var role
+    public private(set) var title
+    public private(set) var image
+    public private(set) var isEnabled
+    public private(set) var titleColor
+    public private(set) var backgroundImage
+    public private(set) var titleShadowColor
+    public private(set) var isPointerInteractionEnabled
+    public private(set) var changesSelectionAsPrimaryAction
+    public private(set) var automaticallyUpdatesConfiguration
+```
+
+### Methods ###
+```swift  
+
+    /*
+     * */
+    @discardableResult public func role<T: LBAnyButtonRole>(_ property: LBObservableProperty<T>) -> LBPropertyBindButtonRole
+    /*
+     * */
+    @discardableResult public func isEnabled<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @discardableResult public func isPointerInteractionEnabled<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @available(iOS 15.0, *)
+    @discardableResult public func changesSelectionAsPrimaryAction<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @available(iOS 15.0, *)
+    @discardableResult public func automaticallyUpdatesConfiguration<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @discardableResult public func setTitle<T: LBAnyString>(_ property: LBObservableProperty<T>, for state: UIControl.State) -> LBPropertyBindText
+    /*
+     * */
+    @discardableResult public func setImage<T: LBAnyImage>(_ property: LBObservableProperty<T>, for state: UIControl.State) -> LBPropertyBindImage
+    /*
+     * */
+    @discardableResult public func setTitleColor<T: LBAnyColor>(_ property: LBObservableProperty<T>, for state: UIControl.State) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func setTitleShadowColor<T: LBAnyColor>(_ property: LBObservableProperty<T>, for state: UIControl.State) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func setBackgroundImage<T: LBAnyImage>(_ property: LBObservableProperty<T>, for state: UIControl.State) -> LBPropertyBindImage
+```
+
+## UILabel -> LBObservablePropertyLabelBinder -> LBObservablePropertyViewBinder ##
+
+### Variables ###
+```swift  
+
+    /* All Variables of Type LBObservablePropertyBind  */
+    /*
+     * LBObservablePropertyBind methods -> 
+     * /* public func remove() */
+     * /* public func onChange(_ block: @escaping() -> Void) */
+     * /* public func onChange(_ block: @escaping(_ newValue: Value) -> Void) */
+     * */
+    
+    public private(set) var font
+    public private(set) var text
+    public private(set) var isEnabled
+    public private(set) var textColor
+    public private(set) var numberOfLines
+    public private(set) var isHighlighted
+    public private(set) var textAlignment
+    public private(set) var minimumScaleFactor
+    public private(set) var baselineAdjustment
+    public private(set) var highlightedTextColor
+    public private(set) var adjustsFontSizeToFitWidth
+    
+```
+
+### Methods ###
+```swift  
+
+    /*
+     * */
+    @discardableResult public func font<T: LBAnyFont>(_ property: LBObservableProperty<T>) -> LBPropertyBindFont
+    /*
+     * */
+    @discardableResult public func text<T: LBAnyString>(_ property: LBObservableProperty<T>) -> LBPropertyBindText
+    /*
+     * */
+    @discardableResult public func isEnabled<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool 
+    /*
+     * */
+    @discardableResult public func numberOfLines<T: LBAnyInt>(_ property: LBObservableProperty<T>) -> LBPropertyBindInt
+    /*
+     * */
+    @discardableResult public func textColor<T: LBAnyColor>(_ property: LBObservableProperty<T>) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func isHighlighted<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+    /*
+     * */
+    @discardableResult public func textAlignment<T: LBAnyTextAlignment>(_ property: LBObservableProperty<T>) -> LBPropertyBindTextAlignment
+    /*
+     * */
+    @discardableResult public func minimumScaleFactor<T: LBAnyCGFloat>(_ property: LBObservableProperty<T>) -> LBPropertyBindCGFloat
+    /*
+     * */
+    @discardableResult public func baselineAdjustment<T: LBAnyBaselineAdjustment>(_ property: LBObservableProperty<T>) -> LBPropertyBindBaselineAdjustment 
+    /*
+     * */
+    @discardableResult public func highlightedTextColor<T: LBAnyColor>(_ property: LBObservableProperty<T>) -> LBPropertyBindColor
+    /*
+     * */
+    @discardableResult public func adjustsFontSizeToFitWidth<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
+```
 

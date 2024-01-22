@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AB1227B1-6E99-475F-ADD0-2B7C1C3A1ED1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "851C2D9F-AD44-462E-BBFF-052CA1E4E53D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/Array/Object/LBObservableObjectArray.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "LBObservableObjectArray"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21BEAB1D-E187-46AF-8146-D75AD2EE4673"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/ObservableArray/Object/LBObservableObjectArray.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "LBObservableObjectArray"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69FF36EE-4AF1-4EA5-A6D8-38202588C2B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/PointerArray/Observer/_LBObservablePointerArray_Observer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "_LBObservablePointerArray_Observer"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA9B7A9B-F909-4E25-8786-264820B2043A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/PointerArray/_LBObservablePointerArray.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "_LBObservablePointerArray"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DA9B7A9B-F909-4E25-8786-264820B2043A - bb14199bea2fd638"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LBObservableObject._LBObservablePointerArray.observe&lt;&#x3c4;_0_0 where &#x3c4;_1_0: __C.NSObject&gt;(&#x3c4;_1_0, () -&gt; ()) -&gt; ()"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/PointerArray/_LBObservablePointerArray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "DA9B7A9B-F909-4E25-8786-264820B2043A - 5de52ccebf9cd196"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LBObservableObject._LBObservablePointerArray.deinit"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/PointerArray/_LBObservablePointerArray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "887A9603-0E2F-4C36-9D8E-CC27B016E57B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/ObservableArray/NSObject/LBObservableNSObjectArray.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "_get(_:object:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F95158-3E3A-4F81-965E-9810BA6334DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/ObservableArray/Object/LBObservableObjectArray.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "_change(pointer:to:group:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24F95158-3E3A-4F81-965E-9810BA6334DE - ef42c92ff942d7a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LBObservableObject.LBObservableObjectArray._change(pointer: Swift.Optional&lt;LBObservableObject._LBObservablePointerArray&lt;&#x3c4;_0_0&gt;&gt;, to: LBObservableObject._LBObservablePointerArray&lt;&#x3c4;_0_0&gt;, group: Swift.String) -&gt; ()"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/ObservableArray/Object/LBObservableObjectArray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "24F95158-3E3A-4F81-965E-9810BA6334DE - c8faa8dd9ed18dba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (&#x3c4;_0_0) -&gt; &#x3c4;_0_0 in LBObservableObject.LBObservableObjectArray._change(pointer: Swift.Optional&lt;LBObservableObject._LBObservablePointerArray&lt;&#x3c4;_0_0&gt;&gt;, to: LBObservableObject._LBObservablePointerArray&lt;&#x3c4;_0_0&gt;, group: Swift.String) -&gt; ()"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/ObservableArray/Object/LBObservableObjectArray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A130875D-4C6D-4E22-85AA-09B37E592412"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/PointerArray/UnsafeRawBufferPointer/_LBUnsafeRawBufferPointer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54A6EF35-9129-4841-AE2B-B56AEEA96A94"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/PointerArray/UnsafeRawBufferPointer/_LBUnsafeRawBufferPointer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "_Test"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "54A6EF35-9129-4841-AE2B-B56AEEA96A94 - 87c3b884f4fd4df6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LBObservableObject._Test.deinit"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/PointerArray/UnsafeRawBufferPointer/_LBUnsafeRawBufferPointer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "54A6EF35-9129-4841-AE2B-B56AEEA96A94 - e0f907e768601ede"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LBObservableObject._Test.__deallocating_deinit"
+                  moduleName = "LBObservableObject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lioz/Desktop/LBObservableObject/LBObservableObject/LBObservableObject/PointerArray/UnsafeRawBufferPointer/_LBUnsafeRawBufferPointer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A8FA191-CF6C-45F9-AF7D-3B89FF90240B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/PointerArray/UnsafeRawBufferPointer/_LBUnsafeRawBufferPointer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "test()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6ECE4CFB-F370-4DC1-A748-E983043765C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/LBObservableProperty/Bind/String/Object/LBObservablePropertyStringBinder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "_observe(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "770C7FCD-2E05-49B9-88DD-F9C6122C744D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/LBObservableProperty/Bind/String/Object/LBObservablePropertyStringBinder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "LBObservablePropertyStringBinder"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D212D66-C158-4229-9F7E-BA8F411ADCD9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBObservableObject/LBObservableObject/LBObservableArray/Observer/LBObservableArrayObserver.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "_change_items(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
