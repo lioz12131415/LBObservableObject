@@ -40,7 +40,7 @@ objc1.observe(self).onPosted {
 // objc0 text == "text-0"
 // objc1 text == "text-1"
 
-objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"]) */
+objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"], ...) */
 
 // objc0 text == "text-0"
 // objc1 text == "text-0"
@@ -91,7 +91,7 @@ objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"]) */
 ### Observe Method ###
 ```swift  
     /*
-     * Observe the object changes when posted.
+     * Observe the changes Object `LBObservableObjectObserver`.
      * */
     public func observe<Target: NSObject>(_ target: Target) -> LBObservableObjectObserver
     /*
@@ -106,4 +106,78 @@ objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"]) */
     }
 ```
 
+# LBObservableProperty #
+## Example ##
 
+```swift 
+class Objc: LBObservableObject {
+    
+    @LBObservableProperty var id:   String = "SOME Id"
+    @LBObservableProperty var text: String = "SOME Text"
+    
+    init(id: String, text: String) {
+        self.id   = id
+        self.text = text
+    }
+    
+    internal required init() {
+        super.init()
+    }
+}
+
+let objc0 = Objc(id: "objc-id", text: "text-0")
+let objc1 = Objc(id: "objc-id", text: "text-1")
+
+objc0.attach(id: objc0.id, toGroup: "A")
+objc1.attach(id: objc1.id, toGroup: "B")
+
+objc0.$text.observe(self).onChange { newValue in
+    /* the new variable value */
+}
+        
+objc1.$text.observe(self).onChange { newValue in
+    /* the new variable value */
+}
+
+// objc0 text == "text-0"
+// objc1 text == "text-1"
+
+objc0.$text.post(toGroup: "B") /* OR objc0.$text.post(toGroups: ["B", ...])  */
+
+// objc0 text == "text-0"
+// objc1 text == "text-0"
+
+```
+
+## Methods ##
+
+### Post Methods ###
+```swift  
+    /*
+     *  Post changes to Selected Group
+     * */
+    public func post(toGroup group: String)
+    /*
+     *  Post changes to Selected Groups
+     * */
+     public func post(toGroups groups: [String])
+```
+
+### Observe Method ###
+```swift  
+    /*
+     * Observe the property changes Object `LBObservablePropertyObserver`.
+     * */
+    public func observe<Target: NSObject>(_ target: Target) -> LBObservablePropertyObserver<Value>
+    /*
+     * `LBObservablePropertyObserver`
+     *  /* public func remove() */
+     *  /* public func onChange(_ block: @escaping() -> Void) */
+     *  /* public func onChange(_ block: @escaping(_ newValue: Value) -> Void) */
+     * */
+    
+    //Example
+    objc0.$text.observe(${ SOME NSObject Observer Target }).onChange {
+        /* Call when property value change */
+    }
+```
