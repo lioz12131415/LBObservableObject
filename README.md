@@ -106,6 +106,8 @@ objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"], ...) */
     }
 ```
 
+<br>
+
 # LBObservableProperty #
 ## Example ##
 
