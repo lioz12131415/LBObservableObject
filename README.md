@@ -29,10 +29,12 @@ let objc1 = Objc(id: "objc-id", text: "text-1")
 objc0.attach(id: objc0.id, toGroup: "A")
 objc1.attach(id: objc1.id, toGroup: "B")
 
+/*self must be of type NSObject*/
 objc0.observe(self).onPosted {
             
 }
-        
+
+/*self must be of type NSObject*/
 objc1.observe(self).onPosted {
     
 }
@@ -133,10 +135,12 @@ let objc1 = Objc(id: "objc-id", text: "text-1")
 objc0.attach(id: objc0.id, toGroup: "A")
 objc1.attach(id: objc1.id, toGroup: "B")
 
+/*self must be of type NSObject*/
 objc0.$text.observe(self).onChange { newValue in
     /* the new variable value */
 }
-        
+
+/*self must be of type NSObject*/
 objc1.$text.observe(self).onChange { newValue in
     /* the new variable value */
 }
@@ -216,11 +220,13 @@ class Objc: LBObservableObject {
     add(to: array0, group: "A")
     add(to: array1, group: "B")
     
+    /*self must be of type NSObject*/
     array0.observe(self).onPosted { [weak self] in
         /* on Array Posted */
     }
     .attach(toGroup: "A")
     
+    /*self must be of type NSObject*/
     array1.observe(self).onPosted { [weak self] in
         /* on Array Posted */
     }
