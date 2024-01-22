@@ -610,15 +610,28 @@ objc.attach(id: objc.id, toGroup: "${Selected Group}")
 |     ATTACH    |
 +---------------+
 |                
-v               
+v 
++-------------+
+|     Pool    |
++-------------+
+|                
+v   
+ADD -----+->  OJBC Type + Observable ID 
+|             |                
+|             v
+|             -----+-> Group
+|                       |                
+|                       v
+|                       -----+-> KEY: pointer objc value, VALUE: OBJC
+v                 
 +----------------------+      
 |                      | 
 |   objc               |    
-|   ID: ${id}          |  
-|   attach to ${group} |  
+|   observable_id      |  
+|   observable_group   |  
 |                      | 
 +----------------------+ 
 
-...
+
 
 ```
