@@ -588,6 +588,7 @@ object.backgroundColor = ${newValue} // change the button instance backgroundCol
 +-----------+    
 
 /* objc group A */
+/* post update the same objects with the same id in selected groups */
 objc.post(toGroups: ["B", "C"]) 
 +---------------+
 |     UPDATE    |
