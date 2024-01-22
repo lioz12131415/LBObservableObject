@@ -647,7 +647,7 @@ objc.observe(${Target: NSObject})
                                               |  
                                               |
                                               +-----+-> GET || CREATE 
-                                                        Observer OBJECT FOR Target TO Observe Object Posted Changes
+                                                        Observer OBJECT FOR Target TO Observe Objc Posted Changes
                                                          |
                   +--------------------------------------+
                   |
