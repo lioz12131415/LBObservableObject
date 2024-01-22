@@ -559,3 +559,65 @@ object.backgroundColor = ${newValue} // change the button instance backgroundCol
     @discardableResult public func adjustsFontSizeToFitWidth<T: LBAnyBool>(_ property: LBObservableProperty<T>) -> LBPropertyBindBool
 ```
 
+<br>
+
+# ARC Design #
+
+## LBObservableObject ##
+```swift
+
++-----------+          +---------+
+|           | <-+----- | objc    |
+|    objc   |          +---------+
+|    ID: 1  |          | group A |
+|           |          +---------+
++-----------+          
+
++-----------+          +---------+
+|           | <-+----- | objc    |
+|    objc   |          +---------+
+|    ID: 1  |          | group B |
+|           |          +---------+
++-----------+        
+
++-----------+          +---------+
+|           | <-+----- | objc    |
+|    objc   |          +---------+
+|    ID: 1  |          | group C |
+|           |          +---------+
++-----------+    
+
+/* objc group A */
+objc.post(toGroups: ["B", "C"]) 
++---------------+
+|     UPDATE    |
++---------------+
+|               | 
+v               v
++-----------+  +-----------+     
+|           |  |           |
+|   objc    |  |   objc    |    
+|   ID: 1   |  |   ID: 1   |
+|   group B |  |   group C |
+|           |  |           |  
++-----------+  +-----------+ 
+
+
+/* objc attach */
+objc.attach(id: objc.id, toGroup: "${Selected Group}")
++---------------+
+|     ATTACH    |
++---------------+
+|                
+v               
++----------------------+      
+|                      | 
+|   objc               |    
+|   ID: ${id}          |  
+|   attach to ${group} |  
+|                      | 
++----------------------+ 
+
+...
+
+```
