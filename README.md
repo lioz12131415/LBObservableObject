@@ -364,9 +364,9 @@ var button = UIButton()
 
 /* button.bind return 'LBObservablePropertyButtonBinder' object */
 
-button.bind.isEnabled(button_objc.$isEnabled)
-button.bind.backgroundColor(button_objc.$backgroundColor)
-button.bind.setTitleColor(button_objc.$textColor, for: .normal)
+button.bind.isEnabled(button_objc.$isEnabled) // set the button instance isEnabled -> objc isEnabled value & bind
+button.bind.backgroundColor(button_objc.$backgroundColor) // set the button instance backgroundColor -> objc backgroundColor value & bind
+button.bind.setTitleColor(button_objc.$textColor, for: .normal) // set the button instance textColor -> objc textColor value & bind
 
 object.isEnabled = ${newValue} // change the button instance isEnabled 
 object.textColor = ${newValue} // change the button instance textColor 
