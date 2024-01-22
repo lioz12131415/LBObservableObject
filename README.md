@@ -643,14 +643,23 @@ objc.observe(${Target: NSObject})
     +-------------+          +-----------------+
     |   Observer  | -----+-> |   Targets Pool  | 
     +-------------+          +-----------------+               
-    |                                          |
-    |                                          |
-    |                                          +-----+-> GET || CREATE 
-    v                                                    Observer OBJECT FOR Target TO Observe Object Posted Changes
-    /* objc observe remove */
-    objc.observe(${Target}).remove()
-    /* objc observe onPosted */
-    objc.observe(${Target}).onPosted { /* BLOCK */ }
+                                              |
+                                              |
+                                              +-----+-> GET || CREATE 
+                                                        Observer OBJECT FOR Target TO Observe Object Posted Changes
+                                                         |
+                  +--------------------------------------+
+                  |
+                  v
+    +----------------------------+
+    | LBObservableObjectObserver |
+    +----------------------------+
+                  |
+                  v
+/* objc observe remove */
+objc.observe(${Target}).remove()
+/* objc observe onPosted */
+objc.observe(${Target}).onPosted { /* BLOCK */ }
     
 
     
