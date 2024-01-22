@@ -633,5 +633,24 @@ v
 +----------------------+ 
 
 
-
+/* objc observe */
+objc.observe(${Target: NSObject})
++---------------+
+|     OBSERVE   |
++---------------+
+    |
+    v
+    +-------------+          +-----------------+
+    |   Observer  | -----+-> |   Targets Pool  | 
+    +-------------+          +-----------------+               
+    |                                          |
+    |                                          |
+    |                                          +-----+-> GET || CREATE 
+    v                                                    Observer OBJECT FOR Target TO Observe Object Posted Changes
+    /* objc observe onPosted */
+    objc.observe(${Target}).onPosted { /* BLOCK */ }
+    
+    /* objc observe remove */
+    objc.observe(${Target}).remove()
+    
 ```
