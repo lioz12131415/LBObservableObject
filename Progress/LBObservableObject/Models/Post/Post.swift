@@ -18,38 +18,8 @@ class Post: LBObservableObject {
     @LBObservableProperty var text:      String  = .empty
     @LBObservableProperty var textColor: UIColor = .white
     
-    var array0 = LBObservableArray<Objc>()
-    var array1 = LBObservableArray<Objc>()
-    
     public required init() {
         super.init()
-        
-        let objc0 = Objc(id: "objc-id", text: "text-0", group: "A")
-        let objc1 = Objc(id: "objc-id", text: "text-1", group: "B")
-        
-        objc0.attach(id: objc0.id, toGroup: "A")
-        objc1.attach(id: objc1.id, toGroup: "B")
-        
-        objc0.$text.observe(self).onChange {
-            
-        }
-        
-        objc1.observe(self).onPosted {
-            
-        }
-        
-        objc0.$text.post(toGroup: "A")
-        
-        array0.observe(self).onPosted { [weak self] in
-            
-        }
-        .attach(toGroup: "A")
-    }
-    
-    internal func add(to array: LBObservableArray<Objc>, group: String) {
-        for i in 0..<100 {
-            array.append(Objc(id: "objc-id-\(i)", text: "text-\(i)", group: group))
-        }
     }
 }
 
@@ -87,22 +57,5 @@ extension Post {
     // ============================================ //
     internal static var empty: Post {
         return Post()
-    }
-}
-
-class Objc: LBObservableObject {
-    
-    @LBObservableProperty var id:   String = "SOME Id"
-    @LBObservableProperty var text: String = "SOME Text"
-    
-    init(id: String, text: String, group: String) {
-        super.init()
-        self.id   = id
-        self.text = text
-        self.attach(id: id, toGroup: group)
-    }
-    
-    internal required init() {
-        super.init()
     }
 }
