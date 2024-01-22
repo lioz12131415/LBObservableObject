@@ -647,10 +647,11 @@ objc.observe(${Target: NSObject})
     |                                          |
     |                                          +-----+-> GET || CREATE 
     v                                                    Observer OBJECT FOR Target TO Observe Object Posted Changes
+    /* objc observe remove */
+    objc.observe(${Target}).remove()
     /* objc observe onPosted */
     objc.observe(${Target}).onPosted { /* BLOCK */ }
     
-    /* objc observe remove */
-    objc.observe(${Target}).remove()
+
     
 ```
