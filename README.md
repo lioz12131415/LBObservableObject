@@ -40,7 +40,7 @@ objc1.observe(self).onPosted {
 // objc0 text == "text-0"
 // objc1 text == "text-1"
 
-objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"], ...) */
+objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B", ...]) */
 
 // objc0 text == "text-0"
 // objc1 text == "text-0"
