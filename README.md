@@ -96,8 +96,8 @@ objc0.post(toGroup: "B") /* OR objc0.post(toGroups: ["B"]) */
     public func observe<Target: NSObject>(_ target: Target) -> LBObservableObjectObserver
     /*
      * `LBObservableObjectObserver`
-     *  public func remove() */
-     *  public func onPosted(_ block: @escaping() -> Void) */
+     *  /* public func remove() */
+     *  /* public func onPosted(_ block: @escaping() -> Void) */
      * */
     
     //Example
