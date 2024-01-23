@@ -1,6 +1,8 @@
 # LBObservableObject
 
 ## Attach
+
+### Method
 ```swift 
 
    /*
@@ -10,6 +12,7 @@
     
 ```
 
+### ARC Design
 ```swift 
 objc.attach(id: "${ID}", toGroup: "${GEOUP}")
 +---------------+
