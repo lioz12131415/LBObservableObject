@@ -134,3 +134,44 @@ v
 +-----------------------------------+ 
 
 ```
+
+<br>
+
+# Copy
+
+### Methods
+```swift 
+  /*
+   *  Call Copy Method Is Copy All The Other Object Properties (Without the Object observable_id And observable_group).
+   *  /* observable_id    -> Value == Self observable_id    */
+   *  /* observable_group -> Value == Self observable_group */
+   * */
+   @discardableResult public func copy(from object: LBObservableObject) -> Self
+  
+  /*
+   *  Call Copy Method Is Copy All The Other Object Properties (With the Object observable_id In Selected Group).
+   *  /* observable_id    -> Value == Object observable_id */
+   *  /* observable_group -> Value == Selected Group  */
+   * */
+   @discardableResult public func copy(from object: LBObservableObject, group: String? = nil) -> Self
+```
+
+### ARC Design
+```swift 
+
+objc0.copy(from: objc1, group: "${GROUP}")
+|
+v
++----------------------------------------------+   
+| MIRROR INTO Self ALL OTHER OBJECT Properties | 
++----------------------------------------------+ 
+                        |                 
+       +----------------+
+       |
+       |
+       v
++-------------+ 
+| RETURN Self |
++-------------+ 
+
+```
