@@ -138,6 +138,24 @@ class ViewController: UIViewController {
 
 ## Example ##
 
+```swift 
+class Objc: LBObservableObject {
+    
+    @LBObservableProperty var id:   String = ""
+    @LBObservableProperty var text: String = ""
+    
+    init(id: String, text: String) {
+        super.init()
+        self.id   = id
+        self.text = text
+    }
+    
+    internal required init() {
+        super.init()
+    }
+}
+```
+
 ```swift
 class ViewController: UIViewController {
     
@@ -210,13 +228,17 @@ class ViewController: UIViewController {
 <br>
 
 # LBObservableArray #
+
+### See the LBObservableArray Code [Examples](Docs/Examples/LBObservableArray_README.md)
+### See the LBObservableArray [Docomotion](Docs/LBObservableArray_README.md) for more info.
+
 ## Example ##
 
 ```swift  
 class Objc: LBObservableObject {
     
-    @LBObservableProperty var id:   String = "SOME Id"
-    @LBObservableProperty var text: String = "SOME Text"
+    @LBObservableProperty var id:   String = ""
+    @LBObservableProperty var text: String = ""
     
     init(id: String, text: String, group: String) {
         super.init()
@@ -232,126 +254,51 @@ class Objc: LBObservableObject {
 ```
 
 ```swift  
+class ViewController: UIViewController {
     
-    var array0 = LBObservableArray<Objc>()
-    var array1 = LBObservableArray<Objc>()
-    
-    add(to: array0, group: "A")
-    add(to: array1, group: "B")
-    
-    /*self must be of type NSObject*/
-    array0.observe(self).onPosted { [weak self] in
-        /* on Array Posted */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var array0 = LBObservableArray<Objc>()
+        var array1 = LBObservableArray<Objc>()
+        
+        /*
+         * setup arrays objects
+         * */
+        reload(array0, group: "A")
+        reload(array1, group: "B")
+        
+        /*
+         * observe & attach arrays
+         * */
+        array0.observe(self).onPosted {
+            /* on Array Posted */
+        }
+        .attach(toGroup: "A")
+        
+        array1.observe(self).onPosted {
+            /* on Array Posted */
+        }
+        .attach(toGroup: "B")
+        
+        /*
+         * change array.
+         * */
+        array0.removeFirst()
+        
+        /*
+         * post changes.
+         * */
+        array0.observe(self).post(toGroups: ["B"])
     }
-    .attach(toGroup: "A")
     
-    /*self must be of type NSObject*/
-    array1.observe(self).onPosted { [weak self] in
-        /* on Array Posted */
-    }
-    .attach(toGroup: "B")
-    
-    array0.removeFirst()
-    array0.observe(self).post(toGroup: "B") /* OR array0.observe(self).post(toGroups: ["B", ...])  */
-    
-    internal func add(to array: LBObservableArray<Objc>, group: String) {
+    fileprivate func reload(_ array: LBObservableArray<Objc>, group: String) {
         for i in 0..<100 {
-            array.append(Objc(id: "objc-id-\(i)", text: "text-\(i)", group: group))
+            let objc = Objc(id: "objc-id-\(i)", text: "objc-\(i)-text", group: group)
+            array.append(objc)
         }
     }
-```
-
-## Variables ##
-
-```swift  
-    /*
-    * */
-    public var count: Int
-    /*
-    * */
-    public var last: Element?
-    /*
-    * */
-    public var first: Element?
-    
-```
-
-## Methods ##
-
-### Static ###
-```swift  
-    /*
-    * */
-    public static func ==(lhs: LBObservableArray, rhs: LBObservableArray) -> Bool
-    /*
-    * */
-    public static func +=(lhs: inout LBObservableArray, rhs: LBObservableArray)
-    /*
-    * */
-    public static func +(lhs: inout LBObservableArray, rhs: LBObservableArray)
-    /*
-    * */
-    public static func +=(lhs: inout LBObservableArray, rhs: [Element])
-    /*
-    * */
-    public static func +(lhs: inout LBObservableArray, rhs: [Element])
-    
-```
-
-### Discardable Result ###
-```swift  
-    /*
-    * */
-    @discardableResult public func popLast() -> Element?
-    /*
-    * */
-    @discardableResult public func removeLast() -> Element
-    /*
-    * */
-    @discardableResult public func removeFirst() -> Element
-    /*
-    * */
-    @discardableResult public func remove(at index: Int) -> Element
-    /*
-    * */
-```
-
-### Others ###
-```swift  
-    /*
-    * */
-    public func append(_ newElement: Element)
-    /*
-    * */
-    public func insert(_ newElement: Element, at i: Int)
-    /*
-    * */
-    public func append(contentsOf newElements: [Element])
-    /*
-    * */
-    public func removeAll(keepingCapacity keepCapacity: Bool = false)
-    
-    /*
-    * */
-    public func forEach(_ body: (Element) -> Void)
-    /*
-    * */
-    public func map<T>(_ transform: (Element) -> T) -> [T]
-    /*
-    * */
-    public func filter(_ isIncluded: (Element) -> Bool) -> [Element]
-    /*
-    * */
-    public func first(where predicate: (Element) -> Bool) -> Element?
-    /*
-    * */
-    public func firstIndex(where predicate: (Element) -> Bool) -> Int?
-    /*
-    * */
-    public func firstIndex(of element: Element) -> Int? where Element: Equatable
-    /*
-    * */
-    public func compactMap<Result>(_ transform: (Element) -> Result?) -> [Result]
+}
 ```
 
 <br>
