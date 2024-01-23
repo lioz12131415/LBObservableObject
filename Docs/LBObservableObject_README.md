@@ -114,4 +114,23 @@ v
    @discardableResult public func reflection(group: String? = nil) -> Self 
 ```
 
-// let t = Self().copy(from: self, group: group)
+### ARC Design
+```swift 
+
+let new_instance = objc.reflection(group: "${GROUP}")
+|
+v
++-----------------------------+   
+| CREATE NEW INSTANCE OF Self | ---+> +-----------------------------------+
++-----------------------------+       | MIRROR Self INTO THE NEW INSTANCE |
+                                      +-----------------------------------+
+                                      |                 
+                +---------------------+
+                |
+                |
+                v
++-----------------------------------+ 
+| RETURN NEW INSTANCE `COPY OF Self |
++-----------------------------------+ 
+
+```
