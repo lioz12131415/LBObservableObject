@@ -163,7 +163,7 @@ objc0.copy(from: objc1, group: "${GROUP}")
 |
 v
 +----------------------------------------------+   
-| MIRROR INTO Self ALL OTHER OBJECT Properties | 
+| MIRROR INTO Self ALL OTHER OBJECT PROPERTIES | 
 +----------------------------------------------+ 
                         |                 
        +----------------+
