@@ -57,7 +57,6 @@ This library provides a custom Observable Objects LBObservableObject
    *  /* Return Instance Of LBObservableObjectObserver */
    * */
    public func observe<Target: NSObject>(_ target: Target) -> LBObservableObjectObserver
-   
    /* LBObservableObjectObserver Methods. */
       |
       v
