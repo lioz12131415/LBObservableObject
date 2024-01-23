@@ -5,7 +5,7 @@ This library provides a custom Observable Objects LBObservableObject
 
 # LBObservableObject #
 
-[![Doc](https://raw.githubusercontent.com/lioz12131415/LBObservableObject/main/Docs/LBObservableObject_README.md)
+## See the [Doc](https://raw.githubusercontent.com/lioz12131415/LBObservableObject/main/Docs/LBObservableObject_README.md) file.
 
 ## Example ##
 
