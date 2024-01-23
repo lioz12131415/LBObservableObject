@@ -5,7 +5,7 @@ This library provides a custom Observable Objects LBObservableObject
 
 # LBObservableObject #
 
-### See the [LBObservableObject Docomotion](Docs/LBObservableObject_README.md) file.
+### See the LBObservableObject [Docomotion](Docs/LBObservableObject_README.md) for more info.
 
 ## Example ##
 
