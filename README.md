@@ -311,34 +311,5 @@ class ViewController: UIViewController {
 ## Example ##
 
 ```swift  
-class Objc: LBObservableObject {
-    
-    @LBObservableProperty var isEnabled:       Bool    = false
-    @LBObservableProperty var textColor:       UIColor = .darkGray
-    @LBObservableProperty var backgroundColor: UIColor = .lightGray
-    
-    init(isEnabled: Bool, textColor: UIColor, backgroundColor: UIColor) {
-        self.isEnabled = isEnabled
-        self.textColor = textColor
-        self.backgroundColor = backgroundColor
-    }
-    
-    required init() {
-        super.init()
-    }
-}
-
-var object = Objc()
-var button = UIButton()
-
-/* button.bind return 'LBObservablePropertyButtonBinder' object */
-
-button.bind.isEnabled(button_objc.$isEnabled) // set the button instance isEnabled -> objc isEnabled value & bind
-button.bind.backgroundColor(button_objc.$backgroundColor) // set the button instance backgroundColor -> objc backgroundColor value & bind
-button.bind.setTitleColor(button_objc.$textColor, for: .normal) // set the button instance textColor -> objc textColor value & bind
-
-object.isEnabled = ${newValue} // change the instance of object isEnabled value & change the instance of button isEnabled value
-object.textColor = ${newValue} // change the instance of object textColor value & change the instance of button textColor value 
-object.backgroundColor = ${newValue} // change the instance of object backgroundColor value & change the instance of button backgroundColor value
 
 ```
