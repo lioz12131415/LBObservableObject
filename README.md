@@ -7,7 +7,72 @@ This library provides a custom Observable Objects LBObservableObject
 
 ### See the LBObservableObject [Docomotion](Docs/LBObservableObject_README.md) for more info.
 
-## Example ##
+## Mwthods ##
+
+```swift 
+
+ /*
+  * attach method -> Attach The Object to observable_id to selected observable_group.
+  * */
+  @discardableResult public func attach(id: String, toGroup group: String) -> Self
+    
+  /*
+   *  Call Post Method Update The Objects With The Same Object Type And Same observable_id In The Selected Group.
+   * */
+   @discardableResult public func post(toGroup group: String) -> Self
+  /*
+   *  Call Post Method Update The Objects With The Same Object Type And Same observable_id In The Selected Groups.
+   * */
+   @discardableResult public func post(toGroups groups: [String]) -> Self
+   
+  /*
+   *  Call Reflection Method Return New instance Copy Of The Object (Without the Object observable_id And observable_group).
+   *  /* observable_id    -> Default Value == "" (Empty String) */
+   *  /* observable_group -> Default Value == "" (Empty String) */
+   * */
+   @discardableResult public func reflection() -> Self 
+  /*
+   *  Call Reflection Method Return New instance Copy Of The Object (With the Object observable_id In Selected Group).
+   *  /* observable_id    -> Value == Object observable_id */
+   *  /* observable_group -> Value == Selected Group  */
+   * */
+   @discardableResult public func reflection(group: String? = nil) -> Self 
+   
+  /*
+   *  Call Copy Method Is Copy All The Other Object Properties (Without the Object observable_id And observable_group).
+   *  /* observable_id    -> Value == Self observable_id    */
+   *  /* observable_group -> Value == Self observable_group */
+   * */
+   @discardableResult public func copy(from object: LBObservableObject) -> Self
+  
+  /*
+   *  Call Copy Method Is Copy All The Other Object Properties (With the Object observable_id In Selected Group).
+   *  /* observable_id    -> Value == Object observable_id */
+   *  /* observable_group -> Value == Selected Group  */
+   * */
+   @discardableResult public func copy(from object: LBObservableObject, group: String? = nil) -> Self
+   
+  /*
+   *  Call Observe Method Added New Observer `Target` To Object Posted Changes.
+   *  /* Return Instance Of LBObservableObjectObserver */
+   * */
+   public func observe<Target: NSObject>(_ target: Target) -> LBObservableObjectObserver
+   
+   /* LBObservableObjectObserver Methods. */
+      |
+      v
+   /* public func remove() */
+   /* public func onPosted(_ block: @escaping() -> Void) */ 
+   
+```
+
+## Examples ##
+
+
+```swift 
+    
+```
+
 
 ```swift 
 class Objc: LBObservableObject {
