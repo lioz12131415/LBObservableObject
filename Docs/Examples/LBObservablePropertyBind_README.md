@@ -79,3 +79,44 @@ imageView.bind.backgroundColor(objc.$backgroundColor).onChange { newValue in
 objc.image           = ${NewValue}
 objc.backgroundColor = ${NewValue}
 ```
+
+## Example 2
+
+```swift  
+class Objc: LBObservableObject {
+    
+    @LBObservableProperty var id:              String  = ""
+    @LBObservableProperty var text:            String  = ""
+    @LBObservableProperty var textColor:       UIColor = .darkGray
+    @LBObservableProperty var backgroundColor: UIColor = .lightGray
+    
+    init(id: String, group: String) {
+        super.init()
+        self.id = id
+        self.attach(id: id, toGroup: group)
+    }
+    
+    internal required init() {
+        super.init()
+    }
+}
+
+let objc  = Objc(id: "objc-id", group: "A")
+let label = UILabel()
+        
+label.bind.text(objc.$text).onChange { newValue in
+    print("text newValue = \(newValue)")
+}
+        
+label.bind.textColor(objc.$textColor).onChange { newValue in
+    print("textColor newValue = \(newValue)")
+}
+        
+label.bind.backgroundColor(objc.$backgroundColor).onChange { newValue in
+    print("backgroundColor newValue = \(newValue)")
+}
+        
+objc.text            = ${NewValue}
+objc.textColor       = ${NewValue}
+objc.backgroundColor = ${NewValue}
+```
